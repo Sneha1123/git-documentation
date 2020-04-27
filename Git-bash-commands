@@ -67,6 +67,23 @@ git push origin master
 
 
 cd ..
+$ git init Fresh-project --> creates a new project
+    Initialized empty Git repository in D:/Projects/Fresh-project/.git/
+$ ls
+    Fresh-project/  github-demo/
+
+$ cd Fresh-project
+$ ls --> gives normal files
+$ ls -al  --> gives dot files
+    total 4
+    drwxr-xr-x 1 Sneha 197121 0 Apr 27 23:43 ./
+    drwxr-xr-x 1 Sneha 197121 0 Apr 27 23:43 ../
+    drwxr-xr-x 1 Sneha 197121 0 Apr 27 23:43 .git/
+
+$ cd .git/
+$ ls
+    config  description  HEAD  hooks/  info/  objects/  refs/
+$ cd ..
 $ git status
     On branch master
 
