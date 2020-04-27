@@ -3,3 +3,64 @@ mkdir <directory name> - mkdir Projects
 $ git config --global user.name "Sneha"
 $ git config --global user.email "sneha.941123@gmail.com"
 $ git config --global --list
+
+Cloning - get a repository in GIT to the local system.
+git clone https://github.com/Sneha1123/github-demo.git
+ls - to check the contents present in the diretory.
+cd github-demo
+ls
+git status -  to check the branch or status
+
+Three areas of GIT
+  1. Working directory
+  2. Staging directory
+  3. Local Git repository
+   then Remote git in browser
+   
+   1 --> 2 add file
+   2 --> 3 commit file
+   3 --> remote -->push file
+   
+echo "Test Git start demo" >> start.txt
+ls
+cat start.txt --> to get the contents of the file
+git status  --> On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+            start.txt
+
+    nothing added to commit but untracked files present (use "git add" to track)
+    
+git add start.txt
+git status -->
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Changes to be committed:
+      (use "git restore --staged <file>..." to unstage)
+            new file:   start.txt
+
+$ git commit -m "Adding Start text file"
+    [master 5e8b6e6] Adding Start text file
+     1 file changed, 1 insertion(+)
+     create mode 100644 start.txt
+     
+git status
+    On branch master
+    Your branch is ahead of 'origin/master' by 1 commit.
+      (use "git push" to publish your local commits)
+
+    nothing to commit, working tree clean
+    
+    
+git push origin master
+    Enumerating objects: 4, done.
+    Counting objects: 100% (4/4), done.
+    Delta compression using up to 4 threads
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 304 bytes | 304.00 KiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+    To https://github.com/Sneha1123/github-demo.git
+       c33fd23..5e8b6e6  master -> master
