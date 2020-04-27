@@ -115,3 +115,118 @@ $ git status
 
 $ git commit --> open default editor t write the message
 $ rm -rf Fresh-project --> deletes the local git repo
+
+
+-----------------------------------------------------Add GIT to an existing project----------------------------------------------------
+$ pwd
+    /d/Projects
+
+$ unzip ~/Downloads/initializr-verekia-4.0.zip
+$ ls
+    github-demo/  initializr/
+
+$ mv initializr web-project --> rename folder 
+$ ls
+    github-demo/  web-project/
+$ cd web-project
+$ ls
+    404.html              crossdomain.xml  fonts/      index.html  tile.png
+    apple-touch-icon.png  css/             humans.txt  js/         tile-wide.png
+    browserconfig.xml     favicon.ico      img/        robots.txt
+
+$ git init --> adding git
+    Initialized empty Git repository in D:/Projects/web-project/.git/
+
+$ ls -al
+    total 84
+    drwxr-xr-x 1 Sneha 197121     0 Apr 28 00:10 ./
+    drwxr-xr-x 1 Sneha 197121     0 Apr 28 00:09 ../
+    drwxr-xr-x 1 Sneha 197121     0 Apr 28 00:10 .git/
+    -rw-r--r-- 1 Sneha 197121 39014 Apr 27 18:37 .htaccess
+    -rw-r--r-- 1 Sneha 197121  1272 Apr 27 18:37 404.html
+    -rw-r--r-- 1 Sneha 197121  3959 Apr 27 18:37 apple-touch-icon.png
+    -rw-r--r-- 1 Sneha 197121   416 Apr 27 18:37 browserconfig.xml
+    -rw-r--r-- 1 Sneha 197121   603 Apr 27 18:37 crossdomain.xml
+    drwxr-xr-x 1 Sneha 197121     0 Apr 28 00:08 css/
+    -rw-r--r-- 1 Sneha 197121   766 Apr 27 18:37 favicon.ico
+    drwxr-xr-x 1 Sneha 197121     0 Apr 28 00:08 fonts/
+    -rw-r--r-- 1 Sneha 197121   191 Apr 27 18:37 humans.txt
+    drwxr-xr-x 1 Sneha 197121     0 Apr 27 18:37 img/
+    -rw-r--r-- 1 Sneha 197121  5329 Apr 27 18:37 index.html
+    drwxr-xr-x 1 Sneha 197121     0 Apr 28 00:08 js/
+    -rw-r--r-- 1 Sneha 197121    78 Apr 27 18:37 robots.txt
+    -rw-r--r-- 1 Sneha 197121  3482 Apr 27 18:37 tile.png
+    -rw-r--r-- 1 Sneha 197121  1854 Apr 27 18:37 tile-wide.png
+
+
+$ git status
+    On branch master
+
+    No commits yet
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+            .htaccess
+            404.html
+            apple-touch-icon.png
+            browserconfig.xml
+            crossdomain.xml
+            css/
+            favicon.ico
+            fonts/
+            humans.txt
+            index.html
+            js/
+            robots.txt
+            tile-wide.png
+            tile.png
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+
+$ git add .  --> . gets the all the files recursively and gives more number of files
+
+$ git status
+    On branch master
+
+    No commits yet
+
+    Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
+            new file:   .htaccess
+            new file:   404.html
+            new file:   apple-touch-icon.png
+            new file:   browserconfig.xml
+            new file:   crossdomain.xml
+            new file:   css/bootstrap-theme.css
+            new file:   css/bootstrap-theme.css.map
+            new file:   css/bootstrap-theme.min.css
+            new file:   css/bootstrap.css
+            new file:   css/bootstrap.css.map
+            new file:   css/bootstrap.min.css
+            new file:   css/main.css
+            new file:   favicon.ico
+            new file:   fonts/glyphicons-halflings-regular.eot
+            new file:   fonts/glyphicons-halflings-regular.svg
+            new file:   fonts/glyphicons-halflings-regular.ttf
+            new file:   fonts/glyphicons-halflings-regular.woff
+            new file:   humans.txt
+            new file:   index.html
+            new file:   js/main.js
+            new file:   js/plugins.js
+            new file:   js/vendor/bootstrap.js
+            new file:   js/vendor/bootstrap.min.js
+            new file:   js/vendor/jquery-1.11.2.min.js
+            new file:   js/vendor/modernizr-2.8.3-respond-1.4.2.min.js
+            new file:   js/vendor/npm.js
+            new file:   robots.txt
+            new file:   tile-wide.png
+            new file:   tile.png
+
+
+
+$ git commit -m "My first commit, inline"
+$ rm -rf .git  --> to remove git 
+$ rm -rf web-project --> to remove entire project from working directory
+
+
