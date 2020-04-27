@@ -1,0 +1,5 @@
+pwd - to check where are we
+mkdir <directory name> - mkdir Projects
+$ git config --global user.name "Sneha"
+$ git config --global user.email "sneha.941123@gmail.com"
+$ git config --global --list
