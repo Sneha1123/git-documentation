@@ -64,3 +64,37 @@ git push origin master
     Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
     To https://github.com/Sneha1123/github-demo.git
        c33fd23..5e8b6e6  master -> master
+
+
+cd ..
+$ git status
+    On branch master
+
+    No commits yet
+
+    nothing to commit (create/copy files and use "git add" to track)
+    
+$ notepad hipster.txt
+$ git status
+    On branch master
+
+    No commits yet
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+            hipster.txt
+
+
+$ git add hipster.txt
+$ git status
+    On branch master
+
+    No commits yet
+
+    Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
+            new file:   hipster.txt
+
+
+$ git commit --> open default editor t write the message
+$ rm -rf Fresh-project --> deletes the local git repo
