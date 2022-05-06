@@ -1,0 +1,117 @@
+git remote add mygit https://github.com/Sneha1123/TCRM-Templates.git
+** may ask for authorization**
+git push mygit
+
+
+--------------------------------------------
+When cloning existing repo and making changes to it and pushing to it
+-------------------------------------------------------------------------
+git --version
+git clone <url>
+cd <dir name>
+ls -la ------------- la (for mac) --> to show all files including hidden ones
+git status
+git add . --> to add all the files that have been modified or are untracked(newly added)
+git add <filename> --> eg. git add index.html --> to add specific files
+git commit -m "some commit message" -m "some commit description"
+
+
+** maybe mac**
+ssh-keygen -t rsa -b 4096 -C "sneha@gmail.com"
+cat <keynamegiven>.pub --> to print the public key
+pbcopy < ~/<path of the key.pub> --> to copy the key if dont want to highlight and copy
+
+
+Go to Github settings --> SSH and GPG keys --> new SSH key --> give any title and then paste the key in the key section --> add SSH key
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+
+****
+
+git push origin master --> works without adding a remote repo as its already been cloned from a repo and hence knows its origin but this cmd will give error in below scenario
+
+
+--------------------------------------------------------------------------------
+Creating a folder locally and want to make it a git repo
+-------------------------------------------------------------------------------
+create folder and files in vs code
+git init --> to make that folder a git repo and so tht it has a .git folder
+now same as cloning
+git status
+git add .
+git commit -m "some commit message" -m "some commit description"
+git remote add origin <url of repo>
+git remote -v --> shows all the remote repos tht are connected
+git push origin master
+git push -u origin master --> if dont wanna write entire part then use upstream (-u) to tell git that i always want to push here and from next time use git push
+
+
+
+----------------------------------------------------------------------------
+Branching concepts --> master and feature branches
+----------------------------------------------------------------------------
+git branch
+q --> to get out of the previous cmd's output
+git checkout -b <branchname> --> -b to create a new branch
+git checkout <branchname> --> to switch between branches
+git status
+git add .
+git commit -m "some commit message" -m "some commit description"
+git checkout master --> files committed on other branch wont be visible here locally
+
+
+git diff <featurebranchname> --> tells what is different compared to master as currently we are in master branch as per line no.61
+git checkout <featurebranchname>
+git push origin <featurebranchname>
+
+------------------------------------------------------------------------------
+PR (Pull request) creation --> to have our code pulled from feature branch to master branch --> people can review and comment and if all is well then merge to master branch
+------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------
+After code merge
+----------------------------------------------------------------
+git checkout master --> still changes arent visible locally, therefore need to get it to local 
+git pull origin master --> if upstream not set for feature branch
+
+
+-----------------------------------------------------------------------------
+Merge conflicts
+----------------------------------------------------------------------------
+when we have multiple branches and we are merging changes from those to master then there are chances of conflicts to happen, eg. in feature we added a new line 2 and  committed the changes and checked out to master and added a line 2 there also. and that causes a conflit as git doesnt know which one to consider and hence we will get conflict error on executing next cmd.
+git checkout <featurebranchname> git merge master --> so to fix the error of conflict, edit the file as per requirement and then commit to feature branch so that we get all the changes that hv been done in master and out feature branch is upto date
+
+----------------------------------------------------------------------
+Delete feature branch
+---------------------------------------------------------------------
+git branch -d <featurebranchname> 
+
+
+-----------------------------------------------------------------------
+Undoing the staging and commit changes
+------------------------------------------------------------------------
+incase of staged changes
+git reset
+git reset <filename> --> if want to unsatge a particular file
+
+incase of commited changes
+git reset HEAD~1 --> HEAD points to last commit and ~1 means go 1 commit further as the last commit is the one i want to undo
+git reset <hashkey> --> hashkey obtained from the logs from misc section below
+
+git reset --hard <hashkey> -->if want to remove the changes made after a certain point completely i.e even from the local
+
+
+---------------------------------------------
+Miscellaneous
+---------------------------------------------
+git commit -am "message" --adds and commit at the same time but only works for modified files and not newly created ones
+git log --> logs of all commits in reverse chronology
+
+
+-----------------------------------------------------------------------
+Forking --> to make complete copy of any git repo and able to make changes in your repo
+------------------------------------------------------------------------------------------
+and if want to pull the changes to the original repo then create PR  
+
+
